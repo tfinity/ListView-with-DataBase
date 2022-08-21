@@ -2,7 +2,9 @@ package haqnawaz.org.DBListView_A020;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -60,8 +62,37 @@ public class MainActivity extends AppCompatActivity {
                 StudentAdapter adapter = new StudentAdapter(getBaseContext(), ListViewArray);
                 ListView listView = findViewById(R.id.listViewStudent);
                 listView.setAdapter(adapter);
+                //setAdapterData(MainActivity.this);
             }
         });
 
     }
+
+    /*public void callSet(){
+        setAdapterData(MainActivity.this);
+    }*/
+
+    //private static ListView listView = null;
+    //static DBHelper dbHelper = null;
+    //static StudentAdapter adapter=null;
+    /*public  void setAdapterData(Context context){
+        Log.d("Error check", "setAdapterData: here");
+
+        if(listView==null){
+            listView=findViewById(R.id.listViewStudent);
+        }
+        if(dbHelper==null){
+            dbHelper= new DBHelper(MainActivity.this);
+        }
+
+
+        ArrayList<StudentModel> ListViewArray =  dbHelper.getAllStudents();
+        Log.d("Error check", "setAdapterData: " + ListViewArray);
+        if(adapter==null){
+            adapter = new StudentAdapter(context, ListViewArray);
+        }
+        //StudentAdapter adapter = new StudentAdapter(context, ListViewArray);
+        //ListView listView = findViewById(R.id.listViewStudent);
+        listView.setAdapter(adapter);
+    }*/
 }
